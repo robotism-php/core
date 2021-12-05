@@ -12,6 +12,7 @@ use RobotismPhp\Command\Factory\TransportFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Workerman\Worker;
 
 class Application implements \Robotism\Contract\Application\Application
 {
@@ -63,8 +64,8 @@ class Application implements \Robotism\Contract\Application\Application
             }
             $this->dispatcher->addListener('message',[$commander,'run'],-9999);
         }
-        $this->wrapper->run();
-
+        $worker=new Worker();
+        $worker->onWorkerStart=[$this->wrapper,'run'];
     }
 
     public function runConsole(){
