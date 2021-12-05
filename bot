@@ -1,0 +1,3 @@
+<?php
+require_once 'vendor/autoload.php';
+\Robotism\Core\Application::create()->at(__DIR__)->run();
