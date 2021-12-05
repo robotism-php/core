@@ -1,0 +1,28 @@
+{
+    "name": "robotism-php/core",
+    "description": "The core module for Robotism",
+    "type": "library",
+    "require": {
+        "robotism-php/contract": "dev-main",
+        "robotism-php/command": "dev-main",
+        "symfony/console": "^5.4",
+        "nikic/php-parser": "^4.13",
+        "symfony/event-dispatcher": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "LGPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Robotism\\Core\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "谢毅",
+            "email": "2387911242@qq.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
